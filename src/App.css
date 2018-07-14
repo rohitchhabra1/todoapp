@@ -1,0 +1,21 @@
+.listli{
+  border:1px solid grey;
+  padding: 5px;
+}
+.listdiv{
+  border:1px solid grey;
+  border-radius: 2px;
+}
+.listitemtitle{
+  margin-left: 10px;
+}
+.listul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.comp{
+  float: right;
+  margin-top: 2px;
+  margin-right: 10px;
+}
