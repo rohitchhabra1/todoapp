@@ -8,6 +8,11 @@
 }
 .listitemtitle{
   margin-left: 10px;
+  border: none;
+  width:60%;
+}
+.listitemtitle:focus{
+  outline: 0;
 }
 .listul{
   padding: 0;
@@ -18,4 +23,26 @@
   float: right;
   margin-top: 2px;
   margin-right: 10px;
+}
+.error{
+  width: 100%;
+  border: 1px solid red;
+  padding: 1px 5px;
+}
+.error:focus{
+  outline: 0;
+}
+.text{
+  width: 100%;
+  padding: 0 5px;
+}
+.text:focus{
+  outline: 0;
+}
+.submitbtn{
+  margin-top: 10px;
+  background: none;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 0px 10px;
 }
