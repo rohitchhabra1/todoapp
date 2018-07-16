@@ -1,72 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Listform from './Listform';
+import Listitems from './Listitems';
 
-class Listitem extends Component {
-    handleChange = (event) => {
-        this.props.onChange(event.target.value);
-    }
-    valueChange = (event) => {
-        this.props.onValueChange(event.target.value, event.target.id);
-    }
-    render() {
-        const props = this.props;
-        return (
-            <li className='listli'>
-                <input type='checkbox' checked={props.value.completed} onChange={this.handleChange} value={props.index} />
-                <input className='listitemtitle' type='text' id={props.index} value={props.value.item} onChange={this.valueChange} readOnly={props.value.completed} />
-                {props.value.completed &&
-                    <span className='badge comp'>Completed</span>
-                }
-            </li>
-        );
-    }
-}
-class Listitems extends Component {
-    render() {
-        const list = this.props.list;
-        const listitem = list.map((value, i) =>
-            <Listitem value={value} key={i} index={i} onChange={(id) => this.props.onChange(id)} onValueChange={(value, id) => this.props.onValueChange(value, id)} />
-        );
-        return (
-            <div className='listdiv'>
-                <ul className='listul'>
-                    {listitem}
-                </ul>
-            </div>
-        );
-    }
-}
-class Listform extends Component {
-    constructor(props) {
-        super(props);
-        this.value = '';
-        this.state = { btn: 'text' };
-    }
-    handleChange = (e) => {
-        this.value = e.target.value;
-        this.setState({ btn: 'text' });
-    }
-    handleSubmit = (event) => {
-        event.preventDefault();
-        if (this.value !== '') {
-            this.props.onChange(this.value);
-            this.value = '';
-        } else {
-            this.setState({ btn: 'error' });
-        }
-    }
-    render() {
-        return (
-            <div onSubmit={this.handleSubmit}>
-                <form >
-                    <h4>TODO</h4>
-                    <input className={this.state.btn} type='text' placeholder='Your TODO...' value={this.value} onChange={this.handleChange} />
-                    <input type='submit' value='Submit' className='submitbtn' />
-                </form>
-            </div>
-        );
-    }
-}
 class App extends Component {
     constructor(props) {
         super(props);
